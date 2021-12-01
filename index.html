@@ -49,11 +49,12 @@
   var charList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var charLength = charList.length;
   var random_key = '';
-  for ( var i = 0; i < length; i++ ) {
+  for (let i = 0; i < 10; i++ ) {
       random_key += charList.charAt(Math.floor(Math.random() * charLength));
   }
+  console.log(random_key);
   var user = {
-    key: {random_key}
+    key: random_key
   };
 
   var ldclient = LDClient.initialize('61a465c7a8e6530f447d9e12', user);
@@ -62,7 +63,7 @@
     var shouldShow = ldclient.variation('blue-background', false);
     if (shouldShow == true) {
       var body = document.querySelector('body');
-      element.classList.add("blue");
+      body.classList.add("blue");
     }
   }
 
